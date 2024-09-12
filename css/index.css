@@ -1,0 +1,51 @@
+body{
+    font-family: arial;
+    background-color:black;
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    background: url("../view/Img/carro_minimalista.jpg") no-repeat;
+    background-size: cover;
+    background-position:center top;
+    background-size:100% 100%;
+    height: 100vh;
+}
+
+
+div.button{
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 65px;
+    border-radius: 15px;
+    color: white;
+}
+
+input[type="button"]{
+    font-size: 24px;
+    background-color: blueviolet;
+    border:1px solid  blueviolet;
+    border-radius: 50px;
+    color: white;
+    transition: 0.5s;
+    
+}
+
+
+
+input[type="button"]:hover{
+
+    background-color: white;
+    color: blueviolet;
+
+}
+
+.login{
+    padding: 15px 40px;
+}
+
+.cadastro {
+    padding: 15px 10px;
+}
