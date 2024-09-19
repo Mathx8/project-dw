@@ -1,0 +1,69 @@
+body{
+    background-color: black;
+    color: white;
+    padding: 0%;
+    margin: 0%;
+}
+
+.nav{
+    background-color: #20b2aa;
+    padding: 1vw;
+}
+
+button{
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    color: #20b2aa;
+}
+
+form{
+    width: 300px;
+    margin: 0 auto;
+    border:2px #20b2aa solid;
+    border-radius: 12px;
+    padding: 12px 20px;
+}
+
+input[type=text], select {
+    width: 100%;
+    border: 1px #20b2aa solid;
+    border-radius: 12px;    
+    padding: 12px 0px;
+}
+
+input[type=email], select {
+    width: 100%;
+    border: 1px #20b2aa solid;
+    border-radius: 12px;    
+    padding: 12px 0px;
+}
+
+input[type=password], select {
+    width: 100%;
+    border: 1px #20b2aa solid;
+    border-radius: 12px;    
+    padding: 12px 0px;
+}
+
+input[type=date], select {
+    width: 100%;
+    border: 1px #20b2aa solid;
+    border-radius: 12px;    
+    padding: 12px 0px;
+}
+
+input[type=button], select {
+    width: 100%;
+    background-color: #20b2aa;
+    border: 1px black solid;
+    border-radius: 12px;
+    padding: 12px 20px;
+    cursor: pointer;
+}

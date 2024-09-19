@@ -4,44 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> | CADASTRO</title>
     <link rel="stylesheet" href="../css/cadastro.css">
     <script src="../script/cadastro.js"></script>
 </head>
 
 <body>
-    <div>
-        <div>
-            <h1>CADASTRO</h1>
+        <div class="nav">
+            <img src="" alt="">
+            <button><a href="../index.html">Inicio</a></button>
+            <button><a href="login.html">LOGIN</a></button>
         </div>
-        <div>
-            <form action="">
+        <main>
+            <h1>FAÇA SEU CADASTRO</h1>
+            <form>
                 <label for="name">Nome: </label>
-                <input type="text" name="name" id="name">
-                <br>
+                <input type="text" name="name" id="name" placeholder="Digite seu nome...">
                 <label for="email">Email: </label>
-                <input type="email" name="email" id="email">
-                <br>
+                <input type="email" name="email" id="email" placeholder="Digite seu email...">
                 <label for="password">Senha: </label>
-                <input type="password" name="password" id="password">
-                <br>
+                <input type="password" name="password" id="password" placeholder="Digite sua senha...">
                 <label for="cpf_cnpj">CPF/CNPJ: </label>
-                <input type="text" name="cpf_cnpj" id="cpf_cnpj">
-                <br>
+                <input type="text" name="cpf_cnpj" id="cpf_cnpj" placeholder="Digite seu CPF ou CNPJ...">
                 <label for="birthday">Data Nascimento: </label>
                 <input type="date" name="birthday" id="birthday">
-                <br>
                 <label for="terms">Termos: </label>
                 <input type="checkbox" name="terms" id="terms">
-                <br>
                 <input type="button" value="Cadastra-se" onclick="Cadastro()">
             </form>
-        </div>
-    </div>
-
-    <div>
-        <button><a href="../index.html">Voltar</a></button>
-    </div>
+    </main>
 </body>
 
 </html>
