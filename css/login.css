@@ -1,41 +1,93 @@
 body{
-    font-family: Arial;
-    background-image: linear-gradient(50deg,blueviolet,black);
+    background-color: black;
+    color: white;
+    padding: 0%;
+    margin: 0%;
 }
 
-.login-pagina{
-    background-color: rgba(0, 0, 0, 0.9);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    padding: 80px;
-    border-radius: 15px;
+.nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr 10fr;
+    grid-column: 1/4;
+    justify-content: center;
+    margin-bottom: 1vh;
+    background-color: #20b2aa;
+    padding: 2vh;
+    border-end-start-radius: 8px;
+}
+
+.logo{
+    display: grid;
+    justify-content: flex-end;
+}
+
+.nav img{
+    width: 1.5vw;
+}
+
+.nav a {
+    text-decoration: none;
     color: white;
 }
 
-input{
-    padding: 15px;
-    border: none;
-    outline: none;
-    font-size: 15px;
+.navegadores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    text-decoration: none;
+    color: white;
 }
 
 button{
-    background-color: blueviolet;
-    border: none;
-    padding: 15px;
-    width: 100%;
-    border-radius: 10px;
-    color: white;
-    font-size: 15px;
-    transition: 0.5s;
-    
-    
-}
-
-button:hover{
     background-color: white;
-    color: blueviolet;
 }
 
+a {
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    color: #20b2aa;
+}
+
+form{
+    width: 300px;
+    margin: 0 auto;
+    border:2px #20b2aa solid;
+    border-radius: 12px;
+    padding: 12px 20px;
+}
+
+input[type=text], select {
+    width: 100%;
+    border: 1px #20b2aa solid;
+    border-radius: 12px;    
+    padding: 12px 0px;
+}
+
+input[type=password], select {
+    width: 100%;
+    border: 1px #20b2aa solid;
+    border-radius: 12px;    
+    padding: 12px 0px;
+}
+
+input[type=button], select {
+    width: 100%;
+    background-color: #20b2aa;
+    border: 1px black solid;
+    border-radius: 12px;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+footer{
+    display: grid;
+    grid-column: 1/3;
+    height: 8vh;
+    margin-top: 1vh;
+    background-color: #20b2aa;
+    border-start-start-radius: 8px;
+}
