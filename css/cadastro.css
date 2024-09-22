@@ -1,55 +1,93 @@
-/* Garante que a imagem de fundo cubra a tela toda */
 body {
     margin: 0;
     padding: 0;
-    height: 100vh; /* Garante que o body ocupe 100% da altura da tela */
-    background-image: url('../view/Img/carro_DW_jpg.jpg'); /* Caminho da imagem */ /*background-image faz com que a imagem fique atras de tudo*/
-    background-size: cover; /* Faz com que a imagem cubra toda a tela */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita que a imagem se repita */
-    background-color: rgb(255, 255, 255); /* Cor de fundo caso a imagem não carregue */
-    font-family: Arial, sans-serif; /* Define a fonte */
+    background-color: black;
+    font-family: Arial, sans-serif; 
     color: white;
 }
-.nav {
+
+.nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr 10fr;
+    grid-column: 1/3;
+    justify-content: center;
+    margin-bottom: 0.6vh;
     background-color: #20b2aa;
-    padding: 1vw;
+    padding: 2vh;
+    border-end-start-radius: 8px;
+}
+
+.logo{
+    display: grid;
+    justify-content: flex-end;
+}
+
+.nav img{
+    width: 1.5vw;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.navegadores {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    text-decoration: none;
+    color: white;
 }
 
-button {
-    background-color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+.navegadores:hover{
+    border-bottom: 2px white solid;
 }
 
-button a {
-    color: #20b2aa;
-    font-weight: bold;
+
+a {
     text-decoration: none;
 }
 
-button:hover {
-    background-color: #f0f0f0;
+#corpo{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+main {
+    display: grid;
+    grid-column: 1/3;
+    background-image: url('../view/Img/carro_DW_jpg.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
 }
 
 h1 {
     text-align: center;
     color: #20b2aa;
-    margin-top: 50px;
+    margin-top: 5vh;
 }
 
 form {
-    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25vw;
     margin: 0 auto;
+    margin-bottom: 5vh;
     border: 4px #20b2aa solid;
     border-radius: 12px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente no formulário */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombras para dar profundidade */
+    padding: 4vw;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+label {
+    width: 100%;
+    align-items: start;
+    padding-bottom: 5px;
+    color: black;
 }
 
 input[type=text], input[type=email], input[type=password], input[type=date] {
@@ -62,10 +100,12 @@ input[type=text], input[type=email], input[type=password], input[type=date] {
     color: #333;
 }
 
-input[type=checkbox] {
-    margin-right: 10px;
-}
 
+.termos {
+    width: 100%;
+    display: flex;
+    margin-bottom: 15px; 
+}
 
 input[type=button] {
     width: 100%;
@@ -83,6 +123,30 @@ input[type=button]:hover {
     background-color: #1e918e;
 }
 
-a {
-    text-decoration: none;
+footer{
+    display: grid;
+    grid-column: 1/3;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    height: 8vh;
+    margin-top: 0.5vh;
+    background-color: #20b2aa;
+    border-start-start-radius: 8px;
+}
+
+footer div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+}
+
+footer a{
+    color: white;
+}
+
+footer img{
+    width: 1.5vw;
 }
