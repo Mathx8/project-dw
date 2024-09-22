@@ -2,38 +2,45 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMW | CADASTRO</title>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Formulário de Cadastro</title>
     <link rel="stylesheet" href="../css/cadastro.css">
     <script src="../script/cadastro.js"></script>
 </head>
 
 <body>
     <div class="nav">
-        <div class="navegadores"><a href="../index.html">SOBRE</a></div>
-        <div class="navegadores"><a href="./login.html">LOGIN</a></div>
-        <a class="logo" href="../index.html"><img src="../view/IMG/LogoAMW.png" alt=""></a>
+        <button><a href="../index.html">SOBRE</a></button> 
+        <button><a href="login.html">LOGIN</a></button>
     </div>
+
     <main>
         <h1>FAÇA SEU CADASTRO</h1>
         <form>
             <label for="name">Nome: </label>
-            <input type="text" name="name" id="name" placeholder="Digite seu nome...">
+            <input type="text" name="name" id="name" placeholder="Digite seu nome..."> 
+            
             <label for="email">Email: </label>
-            <input type="email" name="email" id="email" placeholder="Digite seu email...">
+            <input type="email" name="email" id="email" placeholder="Digite seu email..."> 
+            
             <label for="password">Senha: </label>
             <input type="password" name="password" id="password" placeholder="Digite sua senha...">
+            
             <label for="cpf_cnpj">CPF/CNPJ: </label>
-            <input type="text" name="cpf_cnpj" id="cpf_cnpj" placeholder="Digite seu CPF ou CNPJ...">
-            <label for="birthday">Data Nascimento: </label>
-            <input type="date" name="birthday" id="birthday">
-            <label for="terms">Termos: </label>
-            <input type="checkbox" name="terms" id="terms">
-            <input type="button" value="Cadastra-se" onclick="Cadastro()">
+            <input type="text" name="cpf_cnpj" id="cpf_cnpj" placeholder="Digite seu CPF ou CNPJ..."> 
+            
+            <label for="birthday">Data de Nascimento: </label>
+            <input type="date" name="birthday" id="birthday"> 
+            
+            <label for="terms">Aceito os Termos: </label>
+            <input type="checkbox" name="terms" id="terms"> 
+            
+            <input type="button" value="Cadastrar-se" onclick="Cadastro()">
         </form>
     </main>
-    <footer></footer>
 </body>
+
+</html>
 
 </html>
