@@ -150,3 +150,38 @@ footer a{
 footer img{
     width: 1.5vw;
 }
+
+
+   
+
+i img{
+    width: 1.5vw;
+}
+
+
+.form-control.success input {
+    border: 2px solid #4eca64;
+}
+
+.form-control.error input {
+    border: 2px solid #ca4e4e;
+}
+
+/* Esconder as imagens por padrão */
+.form-control i {
+    visibility: hidden; /* Mantenha as imagens escondidas por padrão */
+}
+
+.form-control.success .img-success {
+    visibility: visible; /* Mostra a imagem de sucesso apenas em sucesso */
+}
+
+.form-control.error .img-error {
+    visibility: visible; /* Mostra a imagem de erro apenas em erro */
+}
+
+.form-control i {
+    position: absolute; /* Certifique-se de que as imagens estão posicionadas corretamente */
+    top: 43px;
+    right: 10px;
+}
