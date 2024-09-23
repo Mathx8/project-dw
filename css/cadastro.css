@@ -72,13 +72,14 @@ h1 {
 form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 25vw;
+    width: 37vw;
+    height: 85vh;
     margin: 0 auto;
     margin-bottom: 5vh;
     border: 4px #20b2aa solid;
     border-radius: 12px;
-    padding: 4vw;
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
@@ -91,24 +92,24 @@ label {
 }
 
 input[type=text], input[type=email], input[type=password], input[type=date] {
-    width: 100%;
+    width: 30vw;
+    height: 7vh;
     border: 1px #20b2aa solid;
     border-radius: 1px;
-    padding: 12px 10px;
     margin-bottom: 15px; 
     font-size: 14px;
     color: #333;
 }
 
-
 .termos {
-    width: 100%;
+    width: 81%;
     display: flex;
+    justify-content: space-around;
     margin-bottom: 15px; 
 }
 
 input[type=button] {
-    width: 100%;
+    width: 50%;
     background-color: #20b2aa;
     border: none;
     border-radius: 12px;
@@ -149,15 +150,26 @@ footer a{
 
 footer img{
     width: 1.5vw;
+    height: 1px;
 }
 
 
-   
+.form-control div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+i{
+    position: absolute;
+    margin-right: 1vw;
+    right: 0;
+}
 
 i img{
     width: 1.5vw;
 }
-
 
 .form-control.success input {
     border: 2px solid #4eca64;
@@ -172,7 +184,7 @@ i img{
     visibility: hidden; /* Mantenha as imagens escondidas por padrão */
 }
 
-.form-control.success .img-success {
+.form-control.success .img-sucess {
     visibility: visible; /* Mostra a imagem de sucesso apenas em sucesso */
 }
 
@@ -181,7 +193,5 @@ i img{
 }
 
 .form-control i {
-    position: absolute; /* Certifique-se de que as imagens estão posicionadas corretamente */
-    top: 43px;
-    right: 10px;
+    display: flex;
 }

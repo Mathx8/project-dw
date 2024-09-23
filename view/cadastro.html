@@ -22,49 +22,57 @@
             <form class="form" id="form">
 
                 <div class="form-control success">
-
                     <label id="labelName" for="name">Nome: </label>
-                    <input type="text" name="name" id="name" placeholder="Digite seu nome...">
-                    <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>     // icon de ok
-                    <i><img class="imag-error" src="IMG/img_error.png" alt=""></i>      // icon de erro
-                    
+                    <div>
+                        <input type="text" name="name" id="name" placeholder="Digite seu nome...">
+                        <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
+                        <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
+                    </div>
                 </div>
 
                 <div class="form-control error">
                     <label id="labelEmail" for="email">Email: </label>
-                    <input type="email" name="email" id="email" placeholder="Digite seu email...">
-                    <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
-                    <i><img class="imag-error" src="IMG/img_error.png" alt=""></i>
+                    <div>
+                        <input type="email" name="email" id="email" placeholder="Digite seu email...">
+                        <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
+                        <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
+                    </div>
                 </div>
 
                 <div class="form-control">
                     <label id="labelPassword" for="password">Senha: </label>
-                    <input type="password" name="password" id="password" placeholder="Digite sua senha...">
-                    <i> <img class="img-sucess" src="IMG/img_sucess.png" alt=""> </i>
-                    <i> <img class="imag-error" src="IMG/img_error.png" alt="">  </i>
+                    <div>
+                        <input type="password" name="password" id="password" placeholder="Digite sua senha...">
+                        <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
+                        <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
+                    </div>
                 </div>
 
                 <div class="form-control">
                     <label id="labelCpfCnpj" for="cpf_cnpj">CPF/CNPJ: </label>
-                    <input type="text" name="cpf_cnpj" id="cpf_cnpj" placeholder="Digite seu CPF ou CNPJ...">
-                    <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
-                    <i><img class="imag-error" src="IMG/img_error.png" alt=""></i>
+                    <div>
+                        <input type="text" name="cpf_cnpj" id="cpf_cnpj" placeholder="Digite seu CPF ou CNPJ...">
+                        <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
+                        <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
+                    </div>
                 </div>
 
                 <div class="form-control">
                     <label for="birthday">Data de Nascimento: </label>
-                    <input type="date" name="birthday" id="birthday">
-                    <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
-                    <i><img class="imag-error" src="IMG/img_error.png" alt=""></i>
+                    <div>
+                        <input type="date" name="birthday" id="birthday">
+                        <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
+                        <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
+                    </div>
                 </div>
-                
-                
+
+
                 <div class="termos">
                     <label for="terms">Aceito os Termos: </label>
                     <input type="checkbox" name="terms" id="terms">
                 </div>
 
-                
+
                 <input type="button" value="Cadastrar-se" onclick="Cadastro()">
             </form>
         </main>
