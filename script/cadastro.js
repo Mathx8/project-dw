@@ -2,6 +2,7 @@
 const url = "https://go-wash-api.onrender.com/api/user"; 
 
 
+
 // Captura os valores dos campos do formulário
 async function cadastroUsuario() {
     const name = document.getElementById('name').value.trim();
@@ -58,7 +59,7 @@ function ValidateName(name) {
        return false;
     }  
     // validação 2
-    if (name.length < 2) {
+    if (name.length < 3) {
         errorValidation('name', 'O nome deve ter mais que 3 caracteres');
         return false;
     } 
