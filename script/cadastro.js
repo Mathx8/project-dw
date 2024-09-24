@@ -1,11 +1,6 @@
 // Link da API fornecida
 const url = "https://go-wash-api.onrender.com/api/user"; 
 
-// Adiciona um Event Listener ao formulário
-document.getElementById('form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    await cadastroUsuario();
-});
 
 // Captura os valores dos campos do formulário
 async function cadastroUsuario() {
@@ -29,8 +24,8 @@ async function cadastroUsuario() {
             let api = await fetch(url, {
                 method: "POST",
                 body: JSON.stringify({
-                    "Nome": name,
-                    "Email": email,
+                    "name": name,
+                    "email": email,
                     "user_type_id": 1,
                     "password": password,
                     "cpf_cnpj": cpf_cnpj,
@@ -41,7 +36,6 @@ async function cadastroUsuario() {
                     'Content-Type': 'application/json'
                 }
             });
-
             if (api.ok) {
                 let resposta = await api.json();
                 console.log(resposta);
