@@ -1,8 +1,6 @@
 // Link da API fornecida
 const url = "https://go-wash-api.onrender.com/api/user"; 
 
-
-
 // Captura os valores dos campos do formulário
 async function cadastroUsuario() {
     const name = document.getElementById('name').value.trim();
