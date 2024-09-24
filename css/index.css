@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap');
+
 body{
     background-color: black;
     color: white;
@@ -16,12 +18,12 @@ body{
 }
 
 #alerta{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
     align-items: center;
-    background-color: #20b2aa;
+    background-color: #494d58;
     border: 2px white solid;
     border-radius: 12px;
     width: 50vw;
@@ -44,11 +46,12 @@ body{
 }
 
 #alerta a:hover {
-    background-color: black
+    background-color: #aa464e;
 }
 
 h1 {
-    color: #20b2aa;
+    font-family: "Cormorant SC", serif;
+    color: white;
 }
 
 p {
@@ -73,8 +76,10 @@ a{
     grid-template-columns: 1fr 1fr 1fr 10fr;
     grid-column: 1/4;
     justify-content: center;
+    align-items: center;
+    gap: 1.5vw;
     margin-bottom: 1vh;
-    background-color: #20b2aa;
+    background-color: #494d58;
     padding: 2vh;
     border-end-start-radius: 8px;
 }
@@ -85,7 +90,7 @@ a{
 }
 
 .nav img{
-    width: 1.5vw;
+    width: 2vw;;
 }
 
 .nav a {
@@ -109,23 +114,38 @@ aside{
     justify-content: center;
     text-align: center;
     margin: 1vh;
-    border: 2px #20b2aa solid;
+    border: 2px #494d58 solid;
     border-radius: 8px;
     padding: 2vh;
 }
 
 aside img {
     width: 30vw;
+    height: 36vh;
 }
 
-aside a {
+.compra {
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    background-color: #20b2aa;
+    background-color: #494d58;
     border: 2px white solid;
     border-radius: 12px;
+}
+
+.compra:hover{
+    background-color: #aa464e;
+}
+
+#promoção2, #promoção3 {
+    display: none;
+}
+
+.setas{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 main {
@@ -133,7 +153,7 @@ main {
     grid-template-columns: 1fr 1fr;
     height: 80vh;
     margin: 1vh;
-    border: 2px #20b2aa solid;
+    border: 2px #494d58 solid;
     border-radius: 8px;
     padding: 2vh;
 }
@@ -152,7 +172,7 @@ footer{
     justify-items: center;
     height: 8vh;
     margin-top: 1vh;
-    background-color: #20b2aa;
+    background-color: #494d58;
     border-start-start-radius: 8px;
 }
 
