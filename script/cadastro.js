@@ -1,67 +1,152 @@
+// Link da API fornecida
+const url = "https://go-wash-api.onrender.com/api/user"; 
+
+// Adiciona um Event Listener ao formulário
+document.getElementById('form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    await cadastroUsuario();
+});
+
+// Captura os valores dos campos do formulário
 async function cadastroUsuario() {
-    let name = document.getElementById('name').value;
-    let email = document.getElementById('email').value;
-    let password = document.getElementById('password').value;
-    let cpf_cnpj = document.getElementById('cpf_cnpj').value;
-    let birthday = document.getElementById('birthday').value;
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const cpf_cnpj = document.getElementById('cpf_cnpj').value.trim();
+    const birthday = document.getElementById('birthday').value.trim();
 
-    // Validação
-    if (!name) {
-        alert("Nome é obrigatório.");
-        return;
-    }
-    
-    if (!email || !/\S+@\S+\.\S+/.test(email)) {
-        alert("Email inválido.");
-        return;
-    }
-    
-    if (password.length < 6) {
-        alert("A senha deve ter pelo menos 6 caracteres.");
-        return;
-    }
+    // Validação dos campos
+    const isValidName = ValidateName(name);
+    const isValidEmail = ValidateEmail(email);
+    const isValidPassword = ValidatePassword(password);
+    const isValidCpfCnpj = ValidateCpf_cnpj(cpf_cnpj);
+    const isValidBirthday = ValidateBirthday(birthday);
 
-    if (!/^\d{11}|\d{14}$/.test(cpf_cnpj)) {
-        alert("CPF/CNPJ inválido. Deve ter 11 ou 14 dígitos.");
-        return;
-    }
+    // Verifica se todos os campos são válidos
+    if (isValidName && isValidEmail && isValidPassword && isValidCpfCnpj && isValidBirthday) {
+        // Requisição à API
+        try {
+            let api = await fetch(url, {
+                method: "POST",
+                body: JSON.stringify({
+                    "Nome": name,
+                    "Email": email,
+                    "user_type_id": 1,
+                    "password": password,
+                    "cpf_cnpj": cpf_cnpj,
+                    "terms": 1,
+                    "birthday": birthday    
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
 
-    if (!birthday) {
-        alert("Data de nascimento é obrigatória.");
-        return;
-    }
+            if (api.ok) {
+                let resposta = await api.json();
+                console.log(resposta);
+                return;
+            }
 
-    // Se todas as validações passarem, continua com a requisição
-    let api = await fetch(url, {
-        method: "POST",
-        body: JSON.stringify({
-            "name": name,
-            "email": email,
-            "user_type_id": 1,
-            "password": password,
-            "cpf_cnpj": cpf_cnpj,
-            "terms": 1,
-            "birthday": birthday    
-        }),
-        headers: {
-            'Content-Type': 'application/json'
+            let respostaErro = await api.json();
+            console.log(respostaErro.data.errors.cpf_cnpj);
+        } catch (error) {
+            console.error("Erro ao enviar dados:", error);
         }
-    });
-
-    if (api.ok) {
-        let resposta = await api.json();
-        console.log(resposta);
-        return;
     }
-
-    let respostaErro = await api.json();
-    console.log(respostaErro.data.errors.cpf_cnpj);
 }
 
+// Funções de validação
+function ValidateName(name) {
+    // validação 1
+    if (name === '') {
+        errorValidation('name', 'Preencha este campo');
+       return false;
+    }  
+    // validação 2
+    if (name.length < 2) {
+        errorValidation('name', 'O nome deve ter mais que 3 caracteres');
+        return false;
+    } 
+        successValidation('name');
+        return true;
+}
+    
 
+function ValidateEmail(email) {
+    // validação 1
+    if(email === ''){
+        errorValidation('email','Preencha esta campo')
+        return false;
+    }
+    // validação 2
+    if (!/\S+@\S+\.\S+/.test(email)) {
+        errorValidation('email', 'Email inválido');
+        return false;
+    } 
+        successValidation('email');
+        return true;
+    
+}
 
+function ValidatePassword(password) {
+    // validação 1
+    if (password === '') {
+        errorValidation('password', 'Preencha este campo');
+       return false;
+    } 
+    // validação 2
+    if (password.length < 6) {
+        errorValidation('password', 'A senha deve ter pelo menos 6 caracteres');
+        return false;
+    } 
+        successValidation('password');
+        return true;
+    
+}
 
+function ValidateCpf_cnpj(cpf_cnpj) {
+    // validação 1
+    if (cpf_cnpj === '') {
+        errorValidation('cpf_cnpj', 'Preencha este campo');
+       return false;
+    } 
+    // validação 2
+    if (!/^\d{11}$|^\d{14}$/.test(cpf_cnpj)) {
+        errorValidation('cpf_cnpj', 'CPF/CNPJ inválido. Deve ter 11 ou 14 dígitos');
+        return false;
+    } 
+        successValidation('cpf_cnpj');
+        return true;
+    
+}
 
+function ValidateBirthday(birthday) {
+    //validação 1
+    if (birthday === '') {
+        errorValidation('birthday', 'Preencha este campo');
+       return false;
+    } 
+    //validação 2
+    if (!birthday) {
+        errorValidation('birthday', 'Data de nascimento é obrigatória');
+        return false;
+    } 
+        successValidation('birthday');
+        return true;
+    
+}
 
+// Funções de manipulação de erros e sucesso
+function errorValidation(inputId, mensagem) {
+    const formControl = document.getElementById(inputId).parentElement;
+    const small = formControl.querySelector('small');
+    small.innerText = mensagem;
 
+    formControl.className = 'form-control error'; // atribuidnoo um novo name a calss 
+}
 
+function successValidation(inputId) {
+    const formControl = document.getElementById(inputId).parentElement;
+    formControl.className = 'form-control success'; // atribuidnoo um novo name a calss
+}

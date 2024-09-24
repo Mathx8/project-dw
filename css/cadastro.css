@@ -12,7 +12,7 @@ body {
     grid-column: 1/3;
     justify-content: center;
     margin-bottom: 0.6vh;
-    background-color: #20b2aa;
+    background-color: #60706f;
     padding: 2vh;
     border-end-start-radius: 8px;
 }
@@ -78,7 +78,7 @@ form {
     height: 85vh;
     margin: 0 auto;
     margin-bottom: 5vh;
-    border: 4px #20b2aa solid;
+    border: 4px #60706f solid;
     border-radius: 12px;
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
@@ -94,7 +94,7 @@ label {
 input[type=text], input[type=email], input[type=password], input[type=date] {
     width: 30vw;
     height: 7vh;
-    border: 1px #20b2aa solid;
+    border: 1px #636d6c solid;
     border-radius: 1px;
     margin-bottom: 15px; 
     font-size: 14px;
@@ -110,7 +110,7 @@ input[type=text], input[type=email], input[type=password], input[type=date] {
 
 input[type=button] {
     width: 50%;
-    background-color: #20b2aa;
+    background-color: #576160;
     border: none;
     border-radius: 12px;
     padding: 12px 20px;
@@ -121,7 +121,7 @@ input[type=button] {
 }
 
 input[type=button]:hover {
-    background-color: #1e918e;
+    background-color: #657776;
 }
 
 footer{
@@ -133,7 +133,7 @@ footer{
     justify-items: center;
     height: 8vh;
     margin-top: 0.5vh;
-    background-color: #20b2aa;
+    background-color: #7f8d8c;
     border-start-start-radius: 8px;
 }
 
@@ -195,3 +195,30 @@ i img{
 .form-control i {
     display: flex;
 }
+
+
+.form-control.success input {
+    border: 3px solid #4ECA64;
+}
+
+    .form-control.error input {
+        border: 3px solid #DB5A5A;
+    }
+
+
+    .form-control.error small{
+        color: #DB5A5A;
+        visibility: visible;
+    }
+
+ 
+
+    .form-control small {
+        visibility: hidden; /* Inicialmente invisível */
+        color: #DB5A5A; /* Cor do texto de erro */
+        font-size: 14px; /* Tamanho da fonte */
+        font-weight: bold; /* Deixa a fonte em negrito */
+        position: absolute; /* Para posicionamento */
+        bottom: 0px; /* Distância do bottom do input */
+        left: 0; /* Alinha à esquerda */
+    }

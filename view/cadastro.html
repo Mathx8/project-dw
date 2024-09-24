@@ -21,21 +21,24 @@
 
             <form class="form" id="form">
 
-                <div class="form-control success">
+                <div class="form-control">
                     <label id="labelName" for="name">Nome: </label>
                     <div>
                         <input type="text" name="name" id="name" placeholder="Digite seu nome...">
                         <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
                         <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
+                        <small>Error mensage</small>
+                        
                     </div>
                 </div>
 
-                <div class="form-control error">
+                <div class="form-control ">
                     <label id="labelEmail" for="email">Email: </label>
                     <div>
                         <input type="email" name="email" id="email" placeholder="Digite seu email...">
                         <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
                         <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
+                        <small>Error mensage</small>
                     </div>
                 </div>
 
@@ -45,6 +48,7 @@
                         <input type="password" name="password" id="password" placeholder="Digite sua senha...">
                         <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
                         <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
+                        <small>Error mensage</small>
                     </div>
                 </div>
 
@@ -54,6 +58,7 @@
                         <input type="text" name="cpf_cnpj" id="cpf_cnpj" placeholder="Digite seu CPF ou CNPJ...">
                         <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
                         <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
+                        <small>Error mensage</small>
                     </div>
                 </div>
 
@@ -63,6 +68,7 @@
                         <input type="date" name="birthday" id="birthday">
                         <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
                         <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
+                        <small>Error mensage</small>
                     </div>
                 </div>
 
@@ -73,7 +79,7 @@
                 </div>
 
 
-                <input type="button" value="Cadastrar-se" onclick="Cadastro()">
+                <input type="button" value="Cadastrar-se" onclick="cadastroUsuario()">
             </form>
         </main>
         <footer>
