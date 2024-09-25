@@ -1,5 +1,5 @@
 // Link da API fornecida
-const url = "https://go-wash-api.onrender.com/api/user"; 
+const url = "https://go-wash-api.onrender.com/api/user";
 
 
 
@@ -31,7 +31,7 @@ async function cadastroUsuario() {
                     "password": password,
                     "cpf_cnpj": cpf_cnpj,
                     "terms": 1,
-                    "birthday": birthday    
+                    "birthday": birthday
                 }),
                 headers: {
                     'Content-Type': 'application/json'
@@ -44,6 +44,11 @@ async function cadastroUsuario() {
             }
 
             let respostaErro = await api.json();
+
+            if (respostaErro.data.errors.cpf_cnpj[0] === "The cpf cnpj has already been taken.") {
+                errorValidation('cpf_cnpj', 'CPF/CNPJ já está sendo usado');
+                return false;
+            }
             console.log(respostaErro.data.errors.cpf_cnpj);
         } catch (error) {
             console.error("Erro ao enviar dados:", error);
@@ -56,80 +61,80 @@ function ValidateName(name) {
     // validação 1
     if (name === '') {
         errorValidation('name', 'Preencha este campo');
-       return false;
-    }  
+        return false;
+    }
     // validação 2
     if (name.length < 3) {
         errorValidation('name', 'O nome deve ter mais que 3 caracteres');
         return false;
-    } 
-        successValidation('name');
-        return true;
+    }
+    successValidation('name');
+    return true;
 }
-    
+
 
 function ValidateEmail(email) {
     // validação 1
-    if(email === ''){
-        errorValidation('email','Preencha esta campo')
+    if (email === '') {
+        errorValidation('email', 'Preencha esta campo')
         return false;
     }
     // validação 2
     if (!/\S+@\S+\.\S+/.test(email)) {
         errorValidation('email', 'Email inválido');
         return false;
-    } 
-        successValidation('email');
-        return true;
-    
+    }
+    successValidation('email');
+    return true;
+
 }
 
 function ValidatePassword(password) {
     // validação 1
     if (password === '') {
         errorValidation('password', 'Preencha este campo');
-       return false;
-    } 
+        return false;
+    }
     // validação 2
     if (password.length < 6) {
         errorValidation('password', 'A senha deve ter pelo menos 6 caracteres');
         return false;
-    } 
-        successValidation('password');
-        return true;
-    
+    }
+    successValidation('password');
+    return true;
+
 }
 
 function ValidateCpf_cnpj(cpf_cnpj) {
     // validação 1
     if (cpf_cnpj === '') {
         errorValidation('cpf_cnpj', 'Preencha este campo');
-       return false;
-    } 
+        return false;
+    }
     // validação 2
     if (!/^\d{11}$|^\d{14}$/.test(cpf_cnpj)) {
         errorValidation('cpf_cnpj', 'CPF/CNPJ inválido. Deve ter 11 ou 14 dígitos');
         return false;
-    } 
-        successValidation('cpf_cnpj');
-        return true;
-    
+    }
+    successValidation('cpf_cnpj');
+    return true;
+
 }
 
 function ValidateBirthday(birthday) {
     //validação 1
     if (birthday === '') {
         errorValidation('birthday', 'Preencha este campo');
-       return false;
-    } 
+        return false;
+    }
     //validação 2
     if (!birthday) {
         errorValidation('birthday', 'Data de nascimento é obrigatória');
         return false;
-    } 
-        successValidation('birthday');
-        return true;
-    
+    }
+    successValidation('birthday');
+    return true;
+
 }
 
 // Funções de manipulação de erros e sucesso
