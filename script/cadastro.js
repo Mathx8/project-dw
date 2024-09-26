@@ -62,11 +62,6 @@ function ValidateName(name) {
         errorValidation('name', 'Preencha este campo');
         return false;
     }
-    // validação 3
-    if (typeof input !== 'string'){
-        errorValidation('name', 'O nome deve conter apenas caracteres');
-        return false;
-    }
     // validação 2
     if (name.length < 3) {
         errorValidation('name', 'O nome deve ter mais que 3 caracteres');
