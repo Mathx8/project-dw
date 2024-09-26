@@ -1,7 +1,6 @@
 // Link da API fornecida
 const url = "https://go-wash-api.onrender.com/api/user";
 
-// teste git
 // Captura os valores dos campos do formulário
 async function cadastroUsuario() {
     const name = document.getElementById('name').value.trim();
@@ -36,16 +35,20 @@ async function cadastroUsuario() {
                     'Content-Type': 'application/json'
                 }
             });
+
             if (api.ok) {
                 let resposta = await api.json();
                 console.log(resposta);
+                alert('Cadastro realizado com sucesso!'); // Alerta de sucesso
                 return;
             }
 
             let respostaErro = await api.json();
 
+            // Verifica se o CPF/CNPJ já está sendo usado
             if (respostaErro.data.errors.cpf_cnpj[0] === "The cpf cnpj has already been taken.") {
                 errorValidation('cpf_cnpj', 'CPF/CNPJ já está sendo usado');
+                alert('CPF/CNPJ já está cadastrado.'); // Alerta para o CPF/CNPJ já cadastrado
                 return false;
             }
             console.log(respostaErro.data.errors.cpf_cnpj);
@@ -54,15 +57,13 @@ async function cadastroUsuario() {
         }
     }
 }
-///////////////////////////////////////////////////////////
+
 // Funções de validação
 function ValidateName(name) {
-    // validação 1
     if (name === '') {
         errorValidation('name', 'Preencha este campo');
         return false;
     }
-    // validação 2
     if (name.length < 3) {
         errorValidation('name', 'O nome deve ter mais que 3 caracteres');
         return false;
@@ -70,75 +71,64 @@ function ValidateName(name) {
     successValidation('name');
     return true;
 }
-///////////////////////////////////////////////////////////
+
 function ValidateEmail(email) {
-    // validação 1
     if (email === '') {
-        errorValidation('email', 'Preencha esta campo')
+        errorValidation('email', 'Preencha este campo');
         return false;
     }
-    // validação 2
     if (!/\S+@\S+\.\S+/.test(email)) {
         errorValidation('email', 'Email inválido');
         return false;
     }
     successValidation('email');
     return true;
-
 }
-///////////////////////////////////////////////////////////
+
 function ValidatePassword(password) {
-    // validação 1
     if (password === '') {
         errorValidation('password', 'Preencha este campo');
         return false;
     }
-    // validação 2
     if (password.length < 6) {
         errorValidation('password', 'A senha deve ter pelo menos 6 caracteres');
         return false;
     }
     successValidation('password');
     return true;
-
 }
-///////////////////////////////////////////////////////////
+
 function ValidateCpf_cnpj(cpf_cnpj) {
-    // validação 1
     if (cpf_cnpj === '') {
         errorValidation('cpf_cnpj', 'Preencha este campo');
         return false;
     }
-    // validação 2
     if (!/^\d{11}$|^\d{14}$/.test(cpf_cnpj)) {
         errorValidation('cpf_cnpj', 'CPF/CNPJ inválido. Deve ter 11 ou 14 dígitos');
         return false;
     }
     successValidation('cpf_cnpj');
     return true;
-
 }
-///////////////////////////////////////////////////////////
+
 function ValidateBirthday(birthday) {
-    //validação 1
     if (birthday === '') {
         errorValidation('birthday', 'Preencha este campo');
         return false;
     }
     successValidation('birthday');
     return true;
-
 }
+
 // Funções de manipulação de erros e sucesso
 function errorValidation(inputId, mensagem) {
     const formControl = document.getElementById(inputId).parentElement;
     const small = formControl.querySelector('small');
     small.innerText = mensagem;
-
-    formControl.className = 'form-control error'; // atribuindo um novo name a calss 
+    formControl.className = 'form-control error';
 }
 
 function successValidation(inputId) {
     const formControl = document.getElementById(inputId).parentElement;
-    formControl.className = 'form-control success'; // atribuindo um novo name a calss
+    formControl.className = 'form-control success';
 }
