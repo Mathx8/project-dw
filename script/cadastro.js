@@ -8,6 +8,7 @@ async function cadastroUsuario() {
     const password = document.getElementById('password').value.trim();
     const cpf_cnpj = document.getElementById('cpf_cnpj').value.trim();
     const birthday = document.getElementById('birthday').value.trim();
+    const terms = document.getElementById('terms').checked;
 
     // Validação dos campos
     const isValidName = ValidateName(name);
@@ -15,9 +16,11 @@ async function cadastroUsuario() {
     const isValidPassword = ValidatePassword(password);
     const isValidCpfCnpj = ValidateCpf_cnpj(cpf_cnpj);
     const isValidBirthday = ValidateBirthday(birthday);
+    const isValidTerms = ValidateTerms(terms); 
 
     // Verifica se todos os campos são válidos
-    if (isValidName && isValidEmail && isValidPassword && isValidCpfCnpj && isValidBirthday) {
+    if (isValidName && isValidEmail && isValidPassword && isValidCpfCnpj && isValidBirthday && isValidTerms) {
+       
         // Requisição à API
         try {
             let api = await fetch(url, {
@@ -39,7 +42,7 @@ async function cadastroUsuario() {
             if (api.ok) {
                 let resposta = await api.json();
                 console.log(resposta);
-                alert('Cadastro realizado com sucesso!'); // Alerta de sucesso
+                alert('Cadastro realizado com sucesso!'); 
                 return;
             }
 
@@ -48,14 +51,14 @@ async function cadastroUsuario() {
             // Verifica se o CPF/CNPJ já está sendo usado
             if (respostaErro.data.errors.cpf_cnpj && respostaErro.data.errors.cpf_cnpj[0] === "The cpf cnpj has already been taken.") {
                 errorValidation('cpf_cnpj', 'CPF/CNPJ já está sendo usado');
-                alert('CPF/CNPJ já está cadastrado.'); // Alerta para o CPF/CNPJ já cadastrado
+                alert('CPF/CNPJ já está cadastrado.'); 
                 return false;
             }
 
             // Verifica se o email já está sendo usado
             if (respostaErro.data.errors.email && respostaErro.data.errors.email[0] === "The email has already been taken.") {
                 errorValidation('email', 'Email já está sendo usado');
-                alert('Email já está cadastrado.'); // Alerta para o email já cadastrado
+                alert('Email já está cadastrado.'); 
                 return false;
             }
 
@@ -66,7 +69,7 @@ async function cadastroUsuario() {
     }
 }
 
-// Funções de validação
+// Funções de validação existentes
 function ValidateName(name) {
     if (name === '') {
         errorValidation('name', 'Preencha este campo');
@@ -79,7 +82,7 @@ function ValidateName(name) {
     successValidation('name');
     return true;
 }
-
+/////////////////////////////////////////////////////////////////
 function ValidateEmail(email) {
     if (email === '') {
         errorValidation('email', 'Preencha este campo');
@@ -92,7 +95,7 @@ function ValidateEmail(email) {
     successValidation('email');
     return true;
 }
-
+/////////////////////////////////////////////////////////////////
 function ValidatePassword(password) {
     if (password === '') {
         errorValidation('password', 'Preencha este campo');
@@ -105,7 +108,7 @@ function ValidatePassword(password) {
     successValidation('password');
     return true;
 }
-
+/////////////////////////////////////////////////////////////////
 function ValidateCpf_cnpj(cpf_cnpj) {
     if (cpf_cnpj === '') {
         errorValidation('cpf_cnpj', 'Preencha este campo');
@@ -118,13 +121,21 @@ function ValidateCpf_cnpj(cpf_cnpj) {
     successValidation('cpf_cnpj');
     return true;
 }
-
+/////////////////////////////////////////////////////////////////
 function ValidateBirthday(birthday) {
     if (birthday === '') {
         errorValidation('birthday', 'Preencha este campo');
         return false;
     }
     successValidation('birthday');
+    return true;
+}
+/////////////////////////////////////////////////////////////////
+function ValidateTerms(terms) {
+    if (!terms) {
+        alert('Você deve aceitar os termos antes de continuar.');
+        return false;
+    }
     return true;
 }
 
