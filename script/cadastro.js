@@ -46,12 +46,20 @@ async function cadastroUsuario() {
             let respostaErro = await api.json();
 
             // Verifica se o CPF/CNPJ já está sendo usado
-            if (respostaErro.data.errors.cpf_cnpj[0] === "The cpf cnpj has already been taken.") {
+            if (respostaErro.data.errors.cpf_cnpj && respostaErro.data.errors.cpf_cnpj[0] === "The cpf cnpj has already been taken.") {
                 errorValidation('cpf_cnpj', 'CPF/CNPJ já está sendo usado');
                 alert('CPF/CNPJ já está cadastrado.'); // Alerta para o CPF/CNPJ já cadastrado
                 return false;
             }
-            console.log(respostaErro.data.errors.cpf_cnpj);
+
+            // Verifica se o email já está sendo usado
+            if (respostaErro.data.errors.email && respostaErro.data.errors.email[0] === "The email has already been taken.") {
+                errorValidation('email', 'Email já está sendo usado');
+                alert('Email já está cadastrado.'); // Alerta para o email já cadastrado
+                return false;
+            }
+
+            console.log(respostaErro.data.errors);
         } catch (error) {
             console.error("Erro ao enviar dados:", error);
         }
