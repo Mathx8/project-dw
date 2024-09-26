@@ -54,7 +54,7 @@ async function cadastroUsuario() {
         }
     }
 }
-
+///////////////////////////////////////////////////////////
 // Funções de validação
 function ValidateName(name) {
     // validação 1
@@ -62,16 +62,21 @@ function ValidateName(name) {
         errorValidation('name', 'Preencha este campo');
         return false;
     }
+    // validação 3
+    if (typeof input !== 'string'){
+        errorValidation('name', 'O nome deve conter apenas caracteres');
+        return false;
+    }
     // validação 2
     if (name.length < 3) {
         errorValidation('name', 'O nome deve ter mais que 3 caracteres');
         return false;
     }
+
     successValidation('name');
     return true;
 }
-
-
+///////////////////////////////////////////////////////////
 function ValidateEmail(email) {
     // validação 1
     if (email === '') {
@@ -87,7 +92,7 @@ function ValidateEmail(email) {
     return true;
 
 }
-
+///////////////////////////////////////////////////////////
 function ValidatePassword(password) {
     // validação 1
     if (password === '') {
@@ -103,7 +108,7 @@ function ValidatePassword(password) {
     return true;
 
 }
-
+///////////////////////////////////////////////////////////
 function ValidateCpf_cnpj(cpf_cnpj) {
     // validação 1
     if (cpf_cnpj === '') {
@@ -119,33 +124,27 @@ function ValidateCpf_cnpj(cpf_cnpj) {
     return true;
 
 }
-
+///////////////////////////////////////////////////////////
 function ValidateBirthday(birthday) {
     //validação 1
     if (birthday === '') {
         errorValidation('birthday', 'Preencha este campo');
         return false;
     }
-    //validação 2
-    if (!birthday) {
-        errorValidation('birthday', 'Data de nascimento é obrigatória');
-        return false;
-    }
     successValidation('birthday');
     return true;
 
 }
-
 // Funções de manipulação de erros e sucesso
 function errorValidation(inputId, mensagem) {
     const formControl = document.getElementById(inputId).parentElement;
     const small = formControl.querySelector('small');
     small.innerText = mensagem;
 
-    formControl.className = 'form-control error'; // atribuidnoo um novo name a calss 
+    formControl.className = 'form-control error'; // atribuindo um novo name a calss 
 }
 
 function successValidation(inputId) {
     const formControl = document.getElementById(inputId).parentElement;
-    formControl.className = 'form-control success'; // atribuidnoo um novo name a calss
+    formControl.className = 'form-control success'; // atribuindo um novo name a calss
 }
