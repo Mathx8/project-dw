@@ -51,15 +51,16 @@ body{
 
 h1 {
     font-family: "Cormorant SC", serif;
-    color: white;
+    color: black;
 }
 
 p {
     margin: 0;
-    height: 70vh;
+    height: 80vh;
     overflow: auto;
     font-size: large;
     text-align: justify;
+    color: black;
 }
 
 a{
@@ -69,6 +70,10 @@ a{
 #corpo{
     display: grid;
     grid-template-columns: 1fr 2fr;
+    background-image: url('../view/Img/carro_DW_jpg.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
 }
 
 .nav{
@@ -113,10 +118,13 @@ aside{
     display: grid;
     justify-content: center;
     text-align: center;
+    height: 90vh;
     margin: 1vh;
     border: 2px #494d58 solid;
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 8px;
     padding: 2vh;
+    color: black;
 }
 
 aside img {
@@ -132,6 +140,7 @@ aside img {
     background-color: #494d58;
     border: 2px white solid;
     border-radius: 12px;
+    color: black;
 }
 
 .compra:hover{
@@ -151,8 +160,9 @@ aside img {
 main {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 80vh;
+    height: 90vh;
     margin: 1vh;
+    background-color: rgba(255, 255, 255, 0.5);
     border: 2px #494d58 solid;
     border-radius: 8px;
     padding: 2vh;
