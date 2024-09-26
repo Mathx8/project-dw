@@ -67,7 +67,6 @@ function ValidateName(name) {
         errorValidation('name', 'O nome deve ter mais que 3 caracteres');
         return false;
     }
-
     successValidation('name');
     return true;
 }
