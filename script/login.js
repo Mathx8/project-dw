@@ -1,20 +1,33 @@
-function Login(){
-    let name = document.getElementById('name').value;
-    if (name) {
-        alert(name)
+async function Login(){
+    const url = "https://go-wash-api.onrender.com/api/login";
+
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    let api = await fetch(url,{
+        method:"POST",
+        body:JSON.stringify({
+            "email":email,
+            "password": password,
+            "user_type_id":1
+        }),
+        headers:{
+            'Content-Type':'application/json'
+        }
+    });
+
+    let resposta = await api.json();
+
+    if (api.ok) {
+        alert("Login feito com sucesso, você será redirecionado para página inicial.")
+        localStorage.setItem("user", JSON.stringify(resposta))
+        window.location.href="../view/home.html"
     } else {
-        alert("O nome é obrigatório")
+        alert(resposta.data.errors);
     }
-    let password = document.getElementById('password').value;
-    if (password) {
-        alert(password)
-    } else {
-        alert("A senha é obrigatório")
-    }
-    let terms = document.getElementById('terms').checked;
-    if (terms) {
-            alert("Vlw é nois")
-    } else {
-        alert("Aceitar os termos é obrigatório")
-    }
+}
+
+function getToken() {
+    let user = JSON.parse(localStorage.getItem('user'));
+    console.log(user.access_token);
 }
