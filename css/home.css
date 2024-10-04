@@ -1,0 +1,236 @@
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #868e96;
+    border-radius: 8px;
+    border: 2px solid #f1f1f1;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #495057;
+}
+
+body{
+    background-color: black;
+    color: white;
+    margin: 0;
+    font-family: Arial, sans-serif; 
+}
+
+h1, h2{
+    font-weight: 600;
+    cursor: default;
+}
+
+a, p{
+    font-weight: 300; 
+    text-decoration: none;
+}
+
+.compra, .navegadores:hover {
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+h1 {
+    color: #333;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    height: 80%;
+    padding: 2vh 1vw;
+    line-height: 1.6;
+    overflow: auto;
+    font-size: 100%;
+    text-align: justify;
+    color: black;
+}
+
+#corpo{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-image: url('../view/Img/carro_DW_jpg.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 10fr;
+    grid-column: 1/4;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vw;
+    margin-bottom: 1vh;
+    background-color: #494d58;
+    padding: 2vh;
+    border-end-start-radius: 8px;
+}
+
+.logo{
+    display: grid;
+    justify-content: flex-end;
+}
+
+.nav img{
+    width: 2vw;;
+}
+
+.nav a {
+    color: white;
+}
+
+.navegadores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    color: white;
+}
+
+.navegadores:hover{
+    border-bottom: 2px white solid;
+}
+
+aside{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    height: 90vh;
+    margin: 1vh;
+    border: 2px #494d58 solid;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 2vh;
+    color: black;
+}
+
+aside img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.compra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    border: 2px white solid;
+    border-radius: 12px;
+    color: black;
+}
+
+.compra h2{
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.compra:hover{
+    background-color: #aa464e;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+}
+
+#promocao {
+    text-align: center;
+    padding: 2vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+#promocao img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+#promoção2, #promoção3 {
+    display: none;
+}
+
+.setas{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 90vh;
+    margin: 1vh;
+    overflow: auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px #494d58 solid;
+    border-radius: 8px;
+    padding: 2vh;
+}
+
+#sobre {
+    display: grid;
+    grid-column: 1 / 3; 
+    padding: 2vh;
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 12px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    color: #333; 
+}
+
+#sobre h1 {
+    font-family: "Cormorant SC", serif; 
+    font-size: 2em;
+    margin-bottom: 1vh;
+    text-align: center;
+    color: #494d58;
+}
+
+#sobre p {
+    margin: 0.5em 0; 
+    line-height: 1.6; 
+    text-align: justify;
+}
+
+#sobre p:hover {
+    background-color: rgba(240, 240, 240, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#Carros{
+    display: grid;
+}
+
+footer{
+    display: grid;
+    grid-column: 1/3;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    height: 8vh;
+    margin-top: 1vh;
+    background-color: #494d58;
+    border-start-start-radius: 8px;
+}
+
+footer div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+}
+
+footer a{
+    color: white;
+}
+
+footer img{
+    width: 1.5vw;
+}

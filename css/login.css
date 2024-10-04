@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap');
 
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #868e96;
+    border-radius: 8px;
+    border: 2px solid #f1f1f1;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #495057;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -161,6 +180,10 @@ footer img{
 }
 
 
+.form-control input:focus {
+    outline: none;
+    border: 2px solid inherit; 
+}
 
 .form-control div {
     position: relative;
@@ -186,18 +209,20 @@ i img{
 .form-control.error input {
     border: 2px solid #ca4e4e;
 }
+.form-control.error input:focus {
+    border: 2px solid #ca4e4e; 
+}
 
-/* Esconder as imagens por padrão */
 .form-control i {
-    visibility: hidden; /* Mantenha as imagens escondidas por padrão */
+    visibility: hidden; 
 }
 
 .form-control.success .img-sucess {
-    visibility: visible; /* Mostra a imagem de sucesso apenas em sucesso */
+    visibility: visible; 
 }
 
 .form-control.error .img-error {
-    visibility: visible; /* Mostra a imagem de erro apenas em erro */
+    visibility: visible; 
 }
 
 .form-control i {
@@ -222,11 +247,11 @@ i img{
  
 
     .form-control small {
-        visibility: hidden; /* Inicialmente invisível */
-        color: #DB5A5A; /* Cor do texto de erro */
-        font-size: 14px; /* Tamanho da fonte */
-        font-weight: bold; /* Deixa a fonte em negrito */
-        position: absolute; /* Para posicionamento */
-        bottom: 0px; /* Distância do bottom do input */
-        left: 0; /* Alinha à esquerda */
+        visibility: hidden;
+        color: #DB5A5A; 
+        font-size: 14px; 
+        font-weight: bold; 
+        position: absolute; 
+        bottom: 0px; 
+        left: 0; 
     }
