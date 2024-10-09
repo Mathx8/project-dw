@@ -3,12 +3,16 @@
 
 <head>
     <meta charset='utf-8'>
-    <title> | LOGIN</title>
+    <title>Login</title>
     <link rel='stylesheet' type='text/css' media='screen' href='../css/login.css'>
     <script src='../script/login.js'></script>
 </head>
 
 <body>
+    <video autoplay muted loop class="background-video">
+        <source src="../view/IMG/The BMW M3 Competition _ lost soul _ 4K.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+    </video>
     <div class="nav">
         <div class="navegadores"><a href="../index.html">SOBRE</a></div>
         <div class="navegadores"><a href="./cadastro.html">CADASTRO</a></div>
@@ -17,9 +21,10 @@
     <main>
         <h1>Login</h1>
         <form action="">
-            <input type="text" placeholder="nome:" id="name">
+            <input type="text" placeholder="Nome:" id="name">
             <input type="password" placeholder="Senha:" id="password">
-            <button onclick="Login()">ENVIAR</button>
+            <button type="button" onclick="Login()">ENVIAR</button>
+        </form>
     </main>
     <footer></footer>
 </body>
