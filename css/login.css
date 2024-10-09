@@ -76,7 +76,7 @@ main {
     align-items: center; 
 }
 
-form {
+form { 
     width: 30vw;
     display: flex; 
     flex-direction: column;
