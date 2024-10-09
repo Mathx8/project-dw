@@ -1,20 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
-    background-color: black;
-    color: white;
-    padding: 0;
-    margin: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     position: relative;
+    background-color: black;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
 .background-video {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
     z-index: -1;
 }
@@ -25,8 +28,8 @@ body {
     align-items: center;
     background-color: rgba(71, 9, 9, 0.8);
     padding: 2vh;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 0.8vw;
+    border-bottom-right-radius: 0.8vw;
 }
 
 .logo {
@@ -35,7 +38,7 @@ body {
 }
 
 .nav img {
-    width: 1.5vw;
+    width: 2.2vw;
 }
 
 .navegadores {
@@ -46,11 +49,11 @@ body {
 }
 
 .navegadores a {
-    margin: 0 10px;
+    margin: 0 1vw;
     color: white;
     text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 8px;
+    padding: 1vh 1.5vw;
+    border-radius: 0.5vw;
     transition: background-color 0.3s;
 }
 
@@ -61,47 +64,70 @@ body {
 h1 {
     text-align: center;
     color: #ffffff;
-    margin-top: 40px; /* Aumentei o espaçamento para melhor centralização */
+    font-size: 3vw;
+    letter-spacing: 0.2vw;
 }
 
 main {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centraliza verticalmente */
-    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center;
+    align-items: center; 
 }
 
 form {
-    width: 300px;
-    margin: 20px auto; /* Espaçamento acima e abaixo do formulário */
-    border: 2px rgba(71, 9, 9, 0.8) solid;
-    border-radius: 12px;
-    padding: 20px; /* Aumentei o padding para espaçamento interno */
-    display: flex; /* Adiciona flex para alinhar inputs e botão */
-    flex-direction: column; /* Organiza os elementos em coluna */
-    gap: 10px; /* Espaçamento entre os elementos do formulário */
+    width: 30vw;
+    display: flex; 
+    flex-direction: column;
+    margin: 20px auto;
+    background-color: rgba(71, 9, 9, 0.6);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    border: 0.3vw rgba(71, 9, 9, 0.8) solid;
+    border-radius: 1vw;
+    padding: 3vh 2vw;
+    gap: 2vh;
 }
 
-input[type=text], input[type=password] {
+input[type=email], input[type=password] {
     width: 100%;
-    border: 1px rgba(71, 9, 9, 0.8) solid;
-    border-radius: 12px;
-    padding: 12px 0; /* Espaçamento interno */
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 0.2vw black solid;
+    border-radius: 1vw;
+    padding: 1.5vh 1vw;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s;
+}
+
+input[type=email]::placeholder, input[type=password]::placeholder {
+    color: #a0a0a0;
+}
+
+input[type=email]:focus, input[type=password]:focus {
+    border: 1px solid #571919;
 }
 
 input[type=button] {
     width: 100%;
-    background-color: #20b2aa;
-    border: 1px black solid;
+    color: #ffffff;
+    background-color: rgba(71, 9, 9, 0.8);
+    border: 0.2vw black solid;
     border-radius: 12px;
-    padding: 12px 0; /* Ajustado para alinhamento */
+    padding: 1.5vh 0;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+input[type=button]:hover {
+    color: rgba(71, 9, 9, 0.8);
+    font-weight: bold; 
+    background-color: #ffffff;
+    transform: scale(1.05);
 }
 
 footer {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 8vh;
     background-color: rgba(129, 156, 155, 0.2);
@@ -109,3 +135,97 @@ footer {
     border-top-right-radius: 8px;
     margin-top: auto;
 }
+
+footer div{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 1vh;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+footer img{
+    width: 1.9vw;
+}
+
+.form-control input:focus {
+    outline: none;
+    border: 2px solid inherit; 
+}
+
+.form-control div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+i{
+    position: absolute;
+    margin-right: 1vw;
+    right: 0;
+}
+
+i img{
+    width: 1.5vw;
+}
+
+.form-control.success input {
+    border: 2px solid #4eca64;
+}
+
+.form-control.error input {
+    border: 2px solid red;
+}
+.form-control.error input:focus {
+    border: 2px solid red; 
+}
+
+.form-control i {
+    visibility: hidden; 
+}
+
+.form-control.success .img-sucess {
+    visibility: visible; 
+}
+
+.form-control.error .img-error {
+    visibility: visible; 
+}
+
+.form-control i {
+    display: flex;
+}
+
+
+.form-control.success input {
+    border: 3px solid #4ECA64;
+}
+
+    .form-control.error input {
+        border: 3px solid red;
+    }
+
+
+    .form-control.error small{
+        color: red;
+        visibility: visible;
+    }
+
+ 
+
+    .form-control small {
+        visibility: hidden;
+        color: #DB5A5A; 
+        font-size: 13px; 
+        font-weight: bold; 
+        position: absolute;
+        padding-right: 2vh;
+        bottom: 0px;
+        right: 0px; 
+    }
