@@ -15,8 +15,6 @@ async function Login() {
     const isValidEmail = ValidateEmail(email);
     const isValidPassword = ValidatePassword(password);
 
-    //let token = JSON.parse(localStorage.getItem('user').aceaccess_token);
-
     if (isValidEmail && isValidPassword) {
 
         let api = await fetch(url, {
@@ -28,7 +26,6 @@ async function Login() {
             }),
             headers: {
                 'Content-Type': 'application/json',
-             //   'Authorization': 'Bearer' +token
             }
         });
 

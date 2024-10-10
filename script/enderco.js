@@ -28,7 +28,7 @@ async function Endereco() {
     const isValidAddress = ValidateAddress(address);
     const isValidNumber = ValidateNumber(number);
 
-    let token = JSON.parse(localStorage.getItem('user.access_token'));
+    let token = JSON.parse(localStorage.getItem('user'));
 
     if (isValidTitle && isValidCep && isValidAddress && isValidNumber) {
 
@@ -43,21 +43,21 @@ async function Endereco() {
             }),
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer' +token
+                'Authorization': 'Bearer' + token.access_token
             }
         });
 
         let resposta = await api.json();
 
-        if (api.ok) {
+        if (api.ok && !resposta.status) {
             alert("Endereço cadastrado com sucesso, você será redirecionado para página inicial.") 
-            //window.location.href = "../view/home.html"
+            window.location.href = "../view/home.html"
         } else {
             errorValidation('title', '');
             errorValidation('cep', '');
             errorValidation('address', '');
             errorValidation('number', '');
-            errorValidation('complement', resposta.data.errors);
+            errorValidation('complement', resposta.status);
         }
     }
 }

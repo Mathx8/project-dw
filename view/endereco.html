@@ -4,28 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMW | CADASTRO</title>
+    <title>AMW | CADASTRO ENDEREÇO</title>
     <link rel="shortcut icon" type="image/png" href="IMG/LogoAMW.png">
     <link rel="stylesheet" href="../css/endereco.css">
 </head>
 
 <body>
-    <div id="corpo">
-        <div class="nav">
-            <div class="navegadores"><a href="../index.html">INICIO</a></div>
-            <div class="navegadores"><a href="./login.html">LOGIN</a></div>
-            <a class="logo" href="../index.html">
-                <img src="../view/IMG/LogoAMW.png" alt="Logo AMW">
-            </a>
-        </div>
-        <main>
-            <h1>FAÇA SEU CADASTRO</h1>
-
+    <div class="nav">
+        <div class="navegadores"><a href="./home.html">INICIO</a></div>
+        <a class="logo" href="./home.html">
+            <img src="../view/IMG/LogoAMW.png" alt="Logo AMW">
+        </a>
+    </div>
+    <main>
+        <h1>CADASTRE UM ENDEREÇO</h1>
+        <div id="principal">
+            <div class="img-fundo">
+                <img src="IMG/SemComentario.png" alt="Imagem ilustrativa">
+            </div>
             <form class="form" id="form">
                 <div class="form-control">
                     <label id="labeltitle" for="title">Titulo: </label>
                     <div>
-                        <input type="text" name="title" id="title" placeholder="sua casa...">
+                        <input type="text" name="title" id="title" placeholder="Nome do endereço...">
                         <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
                         <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
                         <small></small>
@@ -74,22 +75,22 @@
 
                 <input type="button" value="Adicione" onclick="Endereco()">
             </form>
-        </main>
-        <footer>
-            <div>
-                <img src="IMG/git.png" alt="">
-                <a href="https://github.com/Mathx8/" target="_blank">Matheus</a>
-            </div>
-            <div>
-                <img src="IMG/git.png" alt="">
-                <a href="https://github.com/SamuelLopes333" target="_blank">Samuel</a>
-            </div>
-            <div>
-                <img src="IMG/git.png" alt="">
-                <a href="https://github.com/genari05" target="_blank">Tiago</a>
-            </div>
-        </footer>
-    </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <img src="IMG/git.png" alt="">
+            <a href="https://github.com/Mathx8/" target="_blank">Matheus</a>
+        </div>
+        <div>
+            <img src="IMG/git.png" alt="">
+            <a href="https://github.com/SamuelLopes333" target="_blank">Samuel</a>
+        </div>
+        <div>
+            <img src="IMG/git.png" alt="">
+            <a href="https://github.com/genari05" target="_blank">Tiago</a>
+        </div>
+    </footer>
     <script src="../script/enderco.js"></script>
 </body>
 

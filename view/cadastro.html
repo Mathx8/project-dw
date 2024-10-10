@@ -11,7 +11,6 @@
 </head>
 
 <body>
-    <div id="corpo">
         <div class="nav">
             <div class="navegadores"><a href="../index.html">INICIO</a></div>
             <div class="navegadores"><a href="./login.html">LOGIN</a></div>
@@ -19,69 +18,74 @@
         </div>
         <main>
             <h1>FAÇA SEU CADASTRO</h1>
+            <div id="principal">
+                <div class="img-fundo">
+                    <img src="IMG/SemComentario.png" alt="Imagem ilustrativa">
+                </div>
 
-            <form class="form" id="form">
+                <form class="form" id="form">
 
-                <div class="form-control">
-                    <label id="labelName" for="name">Nome: </label>
-                    <div>
-                        <input type="text" name="name" id="name" placeholder="Digite seu nome...">
-                        <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
-                        <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
-                        <small>Error mensage</small>
-                        
+                    <div class="form-control">
+                        <label id="labelName" for="name">Nome: </label>
+                        <div>
+                            <input type="text" name="name" id="name" placeholder="Digite seu nome...">
+                            <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
+                            <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
+                            <small>Error mensage</small>
+
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-control ">
-                    <label id="labelEmail" for="email">Email: </label>
-                    <div>
-                        <input type="email" name="email" id="email" placeholder="Digite seu email...">
-                        <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
-                        <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
-                        <small>Error mensage</small>
+                    <div class="form-control ">
+                        <label id="labelEmail" for="email">Email: </label>
+                        <div>
+                            <input type="email" name="email" id="email" placeholder="Digite seu email...">
+                            <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
+                            <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
+                            <small>Error mensage</small>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-control">
-                    <label id="labelPassword" for="password">Senha: </label>
-                    <div>
-                        <input type="password" name="password" id="password" placeholder="Digite sua senha...">
-                        <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
-                        <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
-                        <small>Error mensage</small>
+                    <div class="form-control">
+                        <label id="labelPassword" for="password">Senha: </label>
+                        <div>
+                            <input type="password" name="password" id="password" placeholder="Digite sua senha...">
+                            <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
+                            <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
+                            <small>Error mensage</small>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-control">
-                    <label id="labelCpfCnpj" for="cpf_cnpj">CPF/CNPJ: </label>
-                    <div>
-                        <input type="text" name="cpf_cnpj" id="cpf_cnpj" placeholder="Digite seu CPF ou CNPJ...">
-                        <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
-                        <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
-                        <small>Error mensage</small>
+                    <div class="form-control">
+                        <label id="labelCpfCnpj" for="cpf_cnpj">CPF/CNPJ: </label>
+                        <div>
+                            <input type="text" name="cpf_cnpj" id="cpf_cnpj" placeholder="Digite seu CPF ou CNPJ...">
+                            <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
+                            <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
+                            <small>Error mensage</small>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-control">
-                    <label for="birthday">Data de Nascimento: </label>
-                    <div>
-                        <input type="date" name="birthday" id="birthday">
-                        <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
-                        <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
-                        <small>Error mensage</small>
+                    <div class="form-control">
+                        <label for="birthday">Data de Nascimento: </label>
+                        <div>
+                            <input type="date" name="birthday" id="birthday">
+                            <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
+                            <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
+                            <small>Error mensage</small>
+                        </div>
                     </div>
-                </div>
 
 
-                <div class="termos">
-                    <label for="terms">Aceito os Termos: </label>
-                    <input type="checkbox" name="terms" id="terms">
-                </div>
+                    <div class="termos">
+                        <label for="terms">Aceito os Termos: </label>
+                        <input type="checkbox" name="terms" id="terms">
+                    </div>
 
 
-                <input type="button" value="Cadastrar-se" onclick="cadastroUsuario()">
-            </form>
+                    <input type="button" value="Cadastrar-se" onclick="cadastroUsuario()">
+                </form>
+            </div>
         </main>
         <footer>
             <div>
@@ -97,7 +101,6 @@
                 <a href="https://github.com/genari05" target="_blank">Tiago</a>
             </div>
         </footer>
-    </div>
 </body>
 
 </html>
