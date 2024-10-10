@@ -1,12 +1,20 @@
-document.getElementById('email').addEventListener('input', function () {
-    ValidateEmail(this.value);
+document.getElementById('title').addEventListener('input', function () {
+    ValidateTitle(this.value);
 });
 
-document.getElementById('password').addEventListener('input', function () {
-    ValidatePassword(this.value);
+document.getElementById('cep').addEventListener('input', function () {
+    ValidateCep(this.value);
 });
 
-async function Login() {
+document.getElementById('address').addEventListener('input', function () {
+    ValidateAddress(this.value);
+});
+
+document.getElementById('number').addEventListener('input', function () {
+    ValidateNumber(this.value);
+});
+
+async function Endereco() {
     const url = "https://go-wash-api.onrender.com/api/auth/address";
 
     const title = document.getElementById('title').value.trim();
@@ -20,7 +28,7 @@ async function Login() {
     const isValidAddress = ValidateAddress(address);
     const isValidNumber = ValidateNumber(number);
 
-    let token = JSON.parse(localStorage.getItem('user').aceaccess_token);
+    let token = JSON.parse(localStorage.getItem('user.access_token'));
 
     if (isValidTitle && isValidCep && isValidAddress && isValidNumber) {
 
@@ -44,7 +52,7 @@ async function Login() {
         if (api.ok) {
             alert("Endereço cadastrado com sucesso, você será redirecionado para página inicial.")
             localStorage.setItem("user", JSON.stringify(resposta))
-            window.location.href = "../view/home.html"
+            //window.location.href = "../view/home.html"
         } else {
             errorValidation('title', '');
             errorValidation('cep', '');
@@ -66,14 +74,32 @@ function ValidateTitle(title) {
 
 function ValidateCep(cep) {
     if (cep === '') {
-        errorValidation('password', 'Preencha este campo');
+        errorValidation('cep', 'Preencha este campo');
         return false;
     }
-    if (cep.length <= 8) {
+    if (cep.length < 8) {
         errorValidation('cep', 'A senha deve ter 8 caracteres');
         return false;
     }
     clearError('cep');
+    return true;
+}
+
+function ValidateAddress(address) {
+    if (address === '') {
+        errorValidation('address', 'Preencha este campo');
+        return false;
+    }
+    clearError('address');
+    return true;
+}
+
+function ValidateNumber(number) {
+    if (number === '') {
+        errorValidation('number', 'Preencha este campo');
+        return false;
+    }
+    clearError('number');
     return true;
 }
 

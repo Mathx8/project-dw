@@ -1,61 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
-    <meta charset='utf-8'>
-    <title>Login</title>
-    <link rel="shortcut icon" type="imagex/png" href="IMG/LogoAMW.png">
-    <link rel='stylesheet' type='text/css' media='screen' href='../css/login.css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMW | CADASTRO</title>
+    <link rel="shortcut icon" type="image/png" href="IMG/LogoAMW.png">
+    <link rel="stylesheet" href="../css/endereco.css">
 </head>
 
 <body>
-   
-    <div class="nav">
-        <div class="navegadores"><a href="../index.html">INICIO</a></div>
-        <div class="navegadores"><a href="./cadastro.html">CADASTRO</a></div>
-        <a class="logo" href="../index.html"><img src="../view/IMG/LogoAMW.png" alt=""></a>
+    <div id="corpo">
+        <div class="nav">
+            <div class="navegadores"><a href="../index.html">INICIO</a></div>
+            <div class="navegadores"><a href="./login.html">LOGIN</a></div>
+            <a class="logo" href="../index.html">
+                <img src="../view/IMG/LogoAMW.png" alt="Logo AMW">
+            </a>
+        </div>
+        <main>
+            <h1>FAÇA SEU CADASTRO</h1>
+
+            <form class="form" id="form">
+                <div class="form-control">
+                    <label id="labeltitle" for="title">Titulo: </label>
+                    <div>
+                        <input type="text" name="title" id="title" placeholder="sua casa...">
+                        <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
+                        <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
+                        <small></small>
+                    </div>
+                </div>
+
+                <div class="form-control">
+                    <label id="labelcep" for="cep">Cep: </label>
+                    <div>
+                        <input type="text" name="cep" id="cep" placeholder="Digite seu Cep...">
+                        <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
+                        <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
+                        <small></small>
+                    </div>
+                </div>
+
+                <div class="form-control">
+                    <label id="labeladdress" for="address">Endereço: </label>
+                    <div>
+                        <input type="text" name="address" id="address" placeholder="Digite seu Endereço...">
+                        <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
+                        <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
+                        <small></small>
+                    </div>
+                </div>
+
+                <div class="form-control">
+                    <label id="labelnumber" for="number">Numero: </label>
+                    <div>
+                        <input type="text" name="number" id="number" placeholder="Digite seu Numero...">
+                        <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
+                        <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
+                        <small></small>
+                    </div>
+                </div>
+
+                <div class="form-control">
+                    <label for="complement">Complemento: </label>
+                    <div>
+                        <input type="text" name="complement" id="complement">
+                        <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
+                        <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
+                        <small></small>
+                    </div>
+                </div>
+
+                <input type="button" value="Adicione" onclick="Endereco()">
+            </form>
+        </main>
+        <footer>
+            <div>
+                <img src="IMG/git.png" alt="">
+                <a href="https://github.com/Mathx8/" target="_blank">Matheus</a>
+            </div>
+            <div>
+                <img src="IMG/git.png" alt="">
+                <a href="https://github.com/SamuelLopes333" target="_blank">Samuel</a>
+            </div>
+            <div>
+                <img src="IMG/git.png" alt="">
+                <a href="https://github.com/genari05" target="_blank">Tiago</a>
+            </div>
+        </footer>
     </div>
-    <main>
-        <form class="form" id="form" action="">
-            <h1>LOGIN</h1>
-            <div class="form-control">
-                <label id="labelEmail" for="email">Usuário</label>
-                <div>
-                    <input type="email" name="email" id="email" placeholder="Digite seu email...">
-                    <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
-                    <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
-                    <small>Error mensage</small>
-                </div>
-            </div>
-
-            <div class="form-control">
-                <label id="labelPassword" for="password">Senha</label>
-                <div>
-                    <input type="password" name="password" id="password" placeholder="Digite sua senha...">
-                    <i><img class="img-sucess" src="IMG/img_sucess.png" alt=""></i>
-                    <i><img class="img-error" src="IMG/img_error.png" alt=""></i>
-                    <small>Error mensage</small>
-                </div>
-            </div>
-
-            <input type="button" value="ENTRAR" onclick="Login()">
-        </form>
-    </main>
-    <footer>
-        <div>
-            <img src="/view/IMG/git.png" alt="">
-            <a href="https://github.com/Mathx8/" target="_blank">Matheus</a>
-        </div>
-        <div>
-            <img src="/view/IMG/git.png" alt="">
-            <a href="https://github.com/SamuelLopes333" target="_blank">Samuel</a>
-        </div>
-        <div>
-            <img src="/view/IMG/git.png" alt="">
-            <a href="https://github.com/genari05" target="_blank">Tiago</a>
-        </div>
-    </footer>
-    <script src='../script/login.js'></script>
+    <script src="../script/enderco.js"></script>
 </body>
 
 </html>
