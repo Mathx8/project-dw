@@ -50,8 +50,7 @@ async function Endereco() {
         let resposta = await api.json();
 
         if (api.ok) {
-            alert("Endereço cadastrado com sucesso, você será redirecionado para página inicial.")
-            localStorage.setItem("user", JSON.stringify(resposta))
+            alert("Endereço cadastrado com sucesso, você será redirecionado para página inicial.") 
             //window.location.href = "../view/home.html"
         } else {
             errorValidation('title', '');
