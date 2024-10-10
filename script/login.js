@@ -35,7 +35,16 @@ async function Login() {
             alert("Login feito com sucesso, você será redirecionado para página inicial.")
             localStorage.setItem("user", JSON.stringify(resposta))
             window.location.href = "../view/home.html"
-        } else {
+        } else if (resposta.data.errors === "Usuário não esta ativo") {
+            alert(resposta.data.errors);
+            errorValidation('email', 'Email não ativado.');
+            errorValidation('password', '');
+        } else if (resposta.data.errors === "Usuário não foi encontrado") {
+            alert(resposta.data.errors);
+            errorValidation('email', 'Usuário inválido.');
+            errorValidation('password', '');
+        }
+        else {
             alert(resposta.data.errors);
             errorValidation('email', '');
             errorValidation('password', 'Email ou senha incorreto. Tente novamente');
