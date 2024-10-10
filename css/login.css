@@ -86,7 +86,7 @@ form {
     border: 0.3vw rgba(71, 9, 9, 0.8) solid;
     border-radius: 1vw;
     padding: 3vh 2vw;
-    gap: 2vh;
+    gap: 3vh;
 }
 
 input[type=email], input[type=password] {
@@ -227,5 +227,6 @@ i img{
         position: absolute;
         padding-right: 2vh;
         bottom: 0px;
+        top: 5.8vh;
         right: 0px; 
     }
