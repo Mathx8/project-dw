@@ -7,67 +7,73 @@ document.getElementById('password').addEventListener('input', function () {
 });
 
 async function Login() {
-    const url = "https://go-wash-api.onrender.com/api/login";
+    const url = "https://go-wash-api.onrender.com/api/auth/address";
 
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value.trim();
+    const title = document.getElementById('title').value.trim();
+    const cep = document.getElementById('cep').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const number = document.getElementById('number').value.trim();
+    const complement = document.getElementById('complement').value.trim();
 
-    const isValidEmail = ValidateEmail(email);
-    const isValidPassword = ValidatePassword(password);
+    const isValidTitle = ValidateTitle(title);
+    const isValidCep = ValidateCep(cep);
+    const isValidAddress = ValidateAddress(address);
+    const isValidNumber = ValidateNumber(number);
 
-    //let token = JSON.parse(localStorage.getItem('user').aceaccess_token);
+    let token = JSON.parse(localStorage.getItem('user').aceaccess_token);
 
-    if (isValidEmail && isValidPassword) {
+    if (isValidTitle && isValidCep && isValidAddress && isValidNumber) {
 
         let api = await fetch(url, {
             method: "POST",
             body: JSON.stringify({
-                "email": email,
-                "password": password,
-                "user_type_id": 1
+                "title": title,
+                "cep": cep,
+                "address": address,
+                "number": number,
+                "complement": complement
             }),
             headers: {
                 'Content-Type': 'application/json',
-             //   'Authorization': 'Bearer' +token
+                'Authorization': 'Bearer' +token
             }
         });
 
         let resposta = await api.json();
 
         if (api.ok) {
-            alert("Login feito com sucesso, você será redirecionado para página inicial.")
+            alert("Endereço cadastrado com sucesso, você será redirecionado para página inicial.")
             localStorage.setItem("user", JSON.stringify(resposta))
             window.location.href = "../view/home.html"
         } else {
-            errorValidation('email', '');
-            errorValidation('password', resposta.data.errors);
+            errorValidation('title', '');
+            errorValidation('cep', '');
+            errorValidation('address', '');
+            errorValidation('number', '');
+            errorValidation('complement', resposta.data.errors);
         }
     }
 }
 
-function ValidateEmail(email) {
-    if (email === '') {
-        errorValidation('email', 'Preencha este campo');
+function ValidateTitle(title) {
+    if (title === '') {
+        errorValidation('title', 'Preencha este campo');
         return false;
     }
-    if (!/\S+@\S+\.\S+/.test(email)) {
-        errorValidation('email', 'Email inválido');
-        return false;
-    }
-    clearError('email');
+    clearError('title');
     return true;
 }
 
-function ValidatePassword(password) {
-    if (password === '') {
+function ValidateCep(cep) {
+    if (cep === '') {
         errorValidation('password', 'Preencha este campo');
         return false;
     }
-    if (password.length < 6) {
-        errorValidation('password', 'A senha deve ter pelo menos 6 caracteres');
+    if (cep.length <= 8) {
+        errorValidation('cep', 'A senha deve ter 8 caracteres');
         return false;
     }
-    clearError('password');
+    clearError('cep');
     return true;
 }
 
