@@ -19,3 +19,9 @@ function AbrirCarros() {
     perfil.style.display = "none";
     sobre.style.display = "none";
 }
+
+function ListUser() {
+    carros.style.display = "flex";
+    perfil.style.display = "none";
+    sobre.style.display = "none";
+}
