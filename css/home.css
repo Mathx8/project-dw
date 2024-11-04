@@ -228,6 +228,10 @@ nav {
     text-align: left;
 }
 
+#perfil .th-atualizar {
+    text-align: center;
+}
+
 #perfil td {
     background-color: #ffffff;
     padding: 10px;

@@ -41,32 +41,33 @@ async function ListarEndereco() {
 
         let enderecos = resposta.data;
 
-        let conteudo = `
-        <h3>Seus Endereços</h3>
-        <table>
-            <tr>
-                <th>Título</th>
-                <th>Endereço</th>
-            </tr>`;
+        let conteudo = '';
 
-        for (let dado of enderecos) {
+        enderecos.forEach(dado => {
             conteudo += `
                 <tr>
                     <td>${dado.title}</td>
                     <td>${dado.formatted_address}</td>
+                    <td><input type='button' value="Atualizar" onClick={}></td>
                 </tr>`;
-        }
+        });
 
-        conteudo += `</table>`;
-
-
-        document.getElementById("lista-endereco").innerHTML = conteudo;
+        document.querySelector("tbody").innerHTML = conteudo;
         
     } catch (error) {
         console.error("Erro ao carregar endereços:", error);
     }
 }
 
+function NaoLogado() {
+    let user = JSON.parse(localStorage.getItem('user')) || {};
+
+    if (!user.access_token) {
+        window.location.href="../index.html"
+    }
+}
+
 window.onload = function () {
+    NaoLogado();
     ListarEndereco();
 }
