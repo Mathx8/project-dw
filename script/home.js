@@ -60,7 +60,7 @@ async function ListarEndereco() {
 }
 
 function NaoLogado() {
-    let user = JSON.parse(localStorage.getItem('user')) || {};
+    let user = token || {};
 
     if (!user.access_token) {
         window.location.href="../index.html"
