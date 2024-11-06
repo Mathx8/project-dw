@@ -48,7 +48,7 @@ async function ListarEndereco() {
                 <tr>
                     <td>${dado.title}</td>
                     <td>${dado.formatted_address}</td>
-                    <td><input type='button' value="Atualizar" onClick={}></td>
+                    <td><input type='button' value="Atualizar" onClick="EnviarDados('${dado.id}', '${dado.title}', '${dado.cep}', '${dado.address}', '${dado.number}', '${dado.complement}')"></td>
                 </tr>`;
         });
 
@@ -57,6 +57,11 @@ async function ListarEndereco() {
     } catch (error) {
         console.error("Erro ao carregar endereços:", error);
     }
+}
+
+function EnviarDados(id, title, cep, address, number, complement) {
+    const urlDados = `./updateEndereco.html?id=${id}&title=${title}&cep=${cep}&address=${address}&number=${number}&complement=${complement}`;
+    window.location.href = urlDados;
 }
 
 function NaoLogado() {

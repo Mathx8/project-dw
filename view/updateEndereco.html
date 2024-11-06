@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMW | ATUALIZE SEU ENDEREÇO</title>
+    <link rel="shortcut icon" type="image/png" href="IMG/LogoAMW.png">
+    <link rel="stylesheet" href="../css/endereco.css">
+</head>
+
+<body>
+    <div class="nav">
+        <div class="navegadores"><a href="./home.html">INICIO</a></div>
+        <a class="logo" href="./home.html">
+            <img src="../view/IMG/LogoAMW.png" alt="Logo AMW">
+        </a>
+    </div>
+    <main>
+        <h1>ATUALIZE SEU ENDEREÇO</h1>
+        <div id="principal">
+            <div class="img-fundo">
+                <img src="IMG/LogoAMW.png" alt="Imagem ilustrativa">
+            </div>
+            <form class="form" id="form">
+                <div class="form-control">
+                    <label id="labeltitle" for="title">Titulo: </label>
+                    <div>
+                        <input type="text" name="title" id="title" placeholder="Nome do endereço...">
+                    </div>
+                </div>
+
+                <div class="form-control">
+                    <label id="labelcep" for="cep">Cep: </label>
+                    <div>
+                        <input type="text" name="cep" id="cep" placeholder="Digite seu Cep...">
+                    </div>
+                </div>
+
+                <div class="form-control">
+                    <label id="labeladdress" for="address">Endereço: </label>
+                    <div>
+                        <input type="text" name="address" id="address" placeholder="Digite seu Endereço...">
+                    </div>
+                </div>
+
+                <div class="form-control">
+                    <label id="labelnumber" for="number">Numero: </label>
+                    <div>
+                        <input type="text" name="number" id="number" placeholder="Digite seu Numero...">
+                    </div>
+                </div>
+
+                <div class="form-control">
+                    <label for="complement">Complemento: </label>
+                    <div>
+                        <input type="text" name="complement" id="complement">
+                    </div>
+                </div>
+
+                <input type="button" value="Atualize" onclick="AtualizarEndereco()">
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <img src="IMG/git.png" alt="">
+            <a href="https://github.com/Mathx8/" target="_blank">Matheus</a>
+        </div>
+        <div>
+            <img src="IMG/git.png" alt="">
+            <a href="https://github.com/SamuelLopes333" target="_blank">Samuel</a>
+        </div>
+        <div>
+            <img src="IMG/git.png" alt="">
+            <a href="https://github.com/genari05" target="_blank">Tiago</a>
+        </div>
+    </footer>
+    <script src="../script/updateEndereco.js"></script>
+</body>
+
+</html>
