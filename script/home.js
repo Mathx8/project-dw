@@ -47,7 +47,9 @@ async function ListarEndereco() {
             conteudo += `
                 <tr>
                     <td>${dado.title}</td>
-                    <td>${dado.formatted_address}</td>
+                    <td>${dado.address}</td>
+                    <td>${dado.number}</td>
+                    <td>${dado.cep}</td>
                     <td><input type='button' value="Atualizar" onClick="EnviarDados('${dado.id}', '${dado.title}', '${dado.cep}', '${dado.address}', '${dado.number}', '${dado.complement}')"></td>
                 </tr>`;
         });
