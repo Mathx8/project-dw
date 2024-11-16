@@ -50,7 +50,7 @@ async function ListarEndereco() {
                     <td>${dado.address}</td>
                     <td>${dado.number}</td>
                     <td>${dado.cep}</td>
-                    <td><input type='button' value="Atualizar" onClick="EnviarDados('${dado.id}', '${dado.title}', '${dado.cep}', '${dado.address}', '${dado.number}', '${dado.complement}')"></td>
+                    <td><input type='button' value="Atualizar" onClick="EnviarDados('${dado.id}')"></td>
                 </tr>`;
         });
 
@@ -61,8 +61,8 @@ async function ListarEndereco() {
     }
 }
 
-function EnviarDados(id, title, cep, address, number, complement) {
-    const urlDados = `./updateEndereco.html?id=${id}&title=${title}&cep=${cep}&address=${address}&number=${number}&complement=${complement}`;
+function EnviarDados(id) {
+    const urlDados = `./updateEndereco.html?id=${id}`;
     window.location.href = urlDados;
 }
 

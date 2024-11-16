@@ -1,47 +1,45 @@
 const dados = new URL(window.location.href);
 const searchParams = dados.searchParams;
-
 const id = searchParams.get("id");
-const title = searchParams.get("title");
-const cep = searchParams.get("cep");
-const address = searchParams.get("address");
-const number = searchParams.get("number");
-let complement = searchParams.get("complement");
 
-if (complement === "null") {
-    complement = "";
-} else {
-    complement = complement || "";
+const url = `https://go-wash-api.onrender.com/api/auth/address/${id}`;
+let token = JSON.parse(localStorage.getItem('user'));
+
+async function ObterEndereco() {
+    try {
+        let api = await fetch(url, {
+            method: "GET",
+            headers: {
+                'Authorization': 'Bearer ' + token.access_token
+            }
+        });
+
+        if (api.ok) {
+            const endereco = await api.json();
+
+            document.getElementById('title').value = endereco.data.title || "";
+            document.getElementById('cep').value = endereco.data.cep || "";
+            document.getElementById('address').value = endereco.data.address || "";
+            document.getElementById('number').value = endereco.data.number || "";
+            document.getElementById('complement').value = endereco.data.complement || "";
+        } else {
+            alert("Erro ao obter os dados do endereço. Verifique o ID.");
+        }
+    } catch (error) {
+        console.error("Erro ao obter os dados do endereço:", error);
+    }
 }
 
-document.getElementById('title').value = title || "";
-document.getElementById('cep').value = cep || "";
-document.getElementById('address').value = address || "";
-document.getElementById('number').value = number || "";
-document.getElementById('complement').value = complement;
-
-console.log(id, title, cep, address, number, complement);
-
 async function AtualizarEndereco() {
-    const url = `https://go-wash-api.onrender.com/api/auth/address/${id}`;
-
-    let token = JSON.parse(localStorage.getItem('user'));
-
     const NovoTitle = document.getElementById('title').value.trim();
     const NovoCep = document.getElementById('cep').value.trim();
     const NovoAddress = document.getElementById('address').value.trim();
     const NovoNumber = document.getElementById('number').value.trim();
     const NovoComplement = document.getElementById('complement').value.trim();
 
-    const title = NovoTitle || searchParams.get("title");
-    const cep = NovoCep || searchParams.get("cep");
-    const address = NovoAddress || searchParams.get("address");
-    const number = NovoNumber || searchParams.get("number");
-    const complement = NovoComplement || (searchParams.get("complement") === "null" ? "" : searchParams.get("complement"));
-
-    const cepValido = /^\d{5}-\d{3}$/.test(cep);
+    const cepValido = /^\d{5}-\d{3}$/.test(NovoCep);
     if (!cepValido) {
-        alert("Por favor, insira um CEP válido com 8 dígitos numéricos.");
+        alert("Por favor, insira um CEP válido no formato XXXXX-XXX.");
         return;
     }
 
@@ -49,11 +47,11 @@ async function AtualizarEndereco() {
         let api = await fetch(url, {
             method: "POST",
             body: JSON.stringify({
-                "title": title,
-                "cep": cep,
-                "address": address,
-                "number": number,
-                "complement": complement
+                "title": NovoTitle || document.getElementById('title').value,
+                "cep": NovoCep || document.getElementById('cep').value,
+                "address": NovoAddress || document.getElementById('address').value,
+                "number": NovoNumber || document.getElementById('number').value,
+                "complement": NovoComplement || document.getElementById('complement').value
             }),
             headers: {
                 'Content-Type': 'application/json',
@@ -62,6 +60,7 @@ async function AtualizarEndereco() {
         });
 
         let resposta = await api.json();
+        console.log(resposta)
 
         if (api.ok && !resposta.status) {
             alert("Endereço atualizado com sucesso, você será redirecionado para a página inicial.");
@@ -72,4 +71,8 @@ async function AtualizarEndereco() {
     } catch (error) {
         console.error("Erro ao fazer requisição para a API:", error);
     }
+}
+
+window.onload = function () {
+    ObterEndereco();
 }
