@@ -4,6 +4,14 @@ let carros = document.getElementById('carros');
 const url = "https://go-wash-api.onrender.com/api/auth/address";
 let token = JSON.parse(localStorage.getItem('user'));
 
+function NaoLogado() {
+    let user = token || {};
+
+    if (!user.access_token) {
+        window.location.href="../index.html"
+    }
+}
+
 function AbrirPerfil() {
     perfil.style.display = "flex";
     sobre.style.display = "none";
@@ -51,6 +59,7 @@ async function ListarEndereco() {
                     <td>${dado.number}</td>
                     <td>${dado.cep}</td>
                     <td><input type='button' value="Atualizar" onClick="EnviarDados('${dado.id}')"></td>
+                    <td><input type='button' value="Deletar" onClick="DeletarEndereco('${dado.id}')"></td>
                 </tr>`;
         });
 
@@ -66,11 +75,18 @@ function EnviarDados(id) {
     window.location.href = urlDados;
 }
 
-function NaoLogado() {
-    let user = token || {};
-
-    if (!user.access_token) {
-        window.location.href="../index.html"
+async function DeletarEndereco(id) {
+    try {
+        let api = await fetch(url+"/"+id, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token.access_token
+            }
+        });
+        ListarEndereco()
+    } catch (error) {
+        console.error("Erro ao deletar endereço:", error);
     }
 }
 
