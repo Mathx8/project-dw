@@ -232,6 +232,20 @@ nav {
     text-align: center;
 }
 
+#perfil .botao {
+    color: #ffffff;
+    background-color: var(--orange);
+    border: 0.2vw var(--orange) solid;
+    border-radius: 0.5vw;
+    padding: 0 1.5vh;
+    cursor: pointer;
+}
+
+#perfil .botao:hover {
+    color: var(--orange);
+    background-color: #ffffff;
+}
+
 #perfil td {
     background-color: #ffffff;
     padding: 10px;

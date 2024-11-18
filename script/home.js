@@ -40,10 +40,6 @@ async function ListarEndereco() {
             }
         });
 
-        if (!api.ok) {
-            throw new Error("Erro ao buscar endereços: " + api.statusText);
-        }
-
         let resposta = await api.json();
         console.log(resposta); 
 
@@ -58,8 +54,8 @@ async function ListarEndereco() {
                     <td>${dado.address}</td>
                     <td>${dado.number}</td>
                     <td>${dado.cep}</td>
-                    <td><input type='button' value="Atualizar" onClick="EnviarDados('${dado.id}')"></td>
-                    <td><input type='button' value="Deletar" onClick="DeletarEndereco('${dado.id}')"></td>
+                    <td><input class="botao" type='button' value="UPDATE" onClick="EnviarDados('${dado.id}')"></td>
+                    <td><input class="botao" type='button' value="DELETE" onClick="DeletarEndereco('${dado.id}')"></td>
                 </tr>`;
         });
 
@@ -84,9 +80,37 @@ async function DeletarEndereco(id) {
                 'Authorization': 'Bearer ' + token.access_token
             }
         });
+
+        let resposta = await api.json();
+        console.log(resposta);
+        
         ListarEndereco()
+        alert("Endereço deletado com sucesso!")
     } catch (error) {
         console.error("Erro ao deletar endereço:", error);
+    }
+}
+
+async function Logout() {
+    try {
+        const urlSair = "https://go-wash-api.onrender.com/api/auth/logout"
+        let api = await fetch(urlSair, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token.access_token
+            }
+        });
+
+        let resposta = await api.json();
+        console.log(resposta); 
+
+        localStorage.clear();
+        alert("Volte Sempre!");
+        window.location.href="../index.html"
+        
+    } catch (error) {
+        console.error("Erro ao sair:", error);
     }
 }
 
