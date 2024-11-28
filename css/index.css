@@ -69,6 +69,21 @@ main {
     background-color: #ffffff;
 }
 
+#clima {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2vw;
+    gap: 5vw;
+    width: 70%;
+    height: 15vh;
+    border: 0.2vw  #FFF solid;
+}
+
+#clima h1{
+    color: white;
+}
+
 footer{
     display: grid;
     grid-column: 1/3;
